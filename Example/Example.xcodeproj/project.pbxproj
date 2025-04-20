@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B47CBFA82DB4D8230078A3CB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47CBFA72DB4D8230078A3CB /* Helper.swift */; };
-		B47CBFAB2DB4D9620078A3CB /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47CBFAA2DB4D9620078A3CB /* PlistReader.swift */; };
-		B47CBFAD2DB4D98A0078A3CB /* PlistKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47CBFAC2DB4D98A0078A3CB /* PlistKeys.swift */; };
 		B47CBFEC2DB4DD5D0078A3CB /* MapboxNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */; };
 		CD958B4B2BF6156100501F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4A2BF6156100501F93 /* AppDelegate.swift */; };
 		CD958B4D2BF6156100501F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4C2BF6156100501F93 /* SceneDelegate.swift */; };
@@ -20,8 +18,6 @@
 
 /* Begin PBXFileReference section */
 		B47CBFA72DB4D8230078A3CB /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		B47CBFAA2DB4D9620078A3CB /* PlistReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
-		B47CBFAC2DB4D98A0078A3CB /* PlistKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistKeys.swift; sourceTree = "<group>"; };
 		CD958B472BF6156100501F93 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B4A2BF6156100501F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD958B4C2BF6156100501F93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,15 +49,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		B47CBFAE2DB4D9C40078A3CB /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				B47CBFAC2DB4D98A0078A3CB /* PlistKeys.swift */,
-				B47CBFAA2DB4D9620078A3CB /* PlistReader.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
 		CD958B3E2BF6156100501F93 = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +73,6 @@
 			children = (
 				CD958B4A2BF6156100501F93 /* AppDelegate.swift */,
 				CD958B4C2BF6156100501F93 /* SceneDelegate.swift */,
-				B47CBFAE2DB4D9C40078A3CB /* Utility */,
 				B47CBFA92DB4D82A0078A3CB /* Helper */,
 				CD958B692BF651F400501F93 /* Secrets.xcconfig */,
 				CD958B532BF6156200501F93 /* Assets.xcassets */,
@@ -181,10 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD958B4B2BF6156100501F93 /* AppDelegate.swift in Sources */,
-				B47CBFAD2DB4D98A0078A3CB /* PlistKeys.swift in Sources */,
 				CD958B4D2BF6156100501F93 /* SceneDelegate.swift in Sources */,
 				B47CBFA82DB4D8230078A3CB /* Helper.swift in Sources */,
-				B47CBFAB2DB4D9620078A3CB /* PlistReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

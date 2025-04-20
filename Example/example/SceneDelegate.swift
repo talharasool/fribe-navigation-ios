@@ -28,10 +28,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		
         self.window = UIWindow(windowScene: windowScene)
         
-        if let apiKey: String = PlistReader.value(forKey: PlistKey.PUBLISHED_API_KEY.rawValue){
-            print("The published API key is here \(apiKey)")
-        }
-        
+//
+//        if let apiKey: String = PlistReader.value(forKey: PlistKey.PUBLISHED_API_KEY.rawValue){
+//            print("The published API key is here \(apiKey)")
+//        }
+//        
 
 
         
