@@ -45,8 +45,7 @@ let package = Package(
             ],
             path: "MapboxNavigation",
             resources: [
-                .copy("Resources/Assets.xcassets"),
-                .process("Utility/PlistReader.swift")
+                .copy("Resources/Assets.xcassets")
             ]
         ),
         .target(
