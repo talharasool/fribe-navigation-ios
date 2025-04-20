@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B47CBFA82DB4D8230078A3CB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47CBFA72DB4D8230078A3CB /* Helper.swift */; };
+		B47CBFEC2DB4DD5D0078A3CB /* MapboxNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */; };
 		CD958B4B2BF6156100501F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4A2BF6156100501F93 /* AppDelegate.swift */; };
 		CD958B4D2BF6156100501F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4C2BF6156100501F93 /* SceneDelegate.swift */; };
 		CD958B542BF6156200501F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD958B532BF6156200501F93 /* Assets.xcassets */; };
@@ -15,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B47CBFA72DB4D8230078A3CB /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CD958B472BF6156100501F93 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B4A2BF6156100501F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD958B4C2BF6156100501F93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +34,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD958B682BF63B3500501F93 /* MapboxNavigation in Frameworks */,
+				B47CBFEC2DB4DD5D0078A3CB /* MapboxNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B47CBFA92DB4D82A0078A3CB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B47CBFA72DB4D8230078A3CB /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		CD958B3E2BF6156100501F93 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +73,7 @@
 			children = (
 				CD958B4A2BF6156100501F93 /* AppDelegate.swift */,
 				CD958B4C2BF6156100501F93 /* SceneDelegate.swift */,
+				B47CBFA92DB4D82A0078A3CB /* Helper */,
 				CD958B692BF651F400501F93 /* Secrets.xcconfig */,
 				CD958B532BF6156200501F93 /* Assets.xcassets */,
 				CD958B552BF6156200501F93 /* LaunchScreen.storyboard */,
@@ -94,6 +107,7 @@
 			name = Example;
 			packageProductDependencies = (
 				CD958B672BF63B3500501F93 /* MapboxNavigation */,
+				B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */,
 			);
 			productName = "navigation sample";
 			productReference = CD958B472BF6156100501F93 /* Example.app */;
@@ -124,6 +138,7 @@
 			);
 			mainGroup = CD958B3E2BF6156100501F93;
 			packageReferences = (
+				B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */,
 			);
 			productRefGroup = CD958B482BF6156100501F93 /* Products */;
 			projectDirPath = "";
@@ -153,6 +168,7 @@
 			files = (
 				CD958B4B2BF6156100501F93 /* AppDelegate.swift in Sources */,
 				CD958B4D2BF6156100501F93 /* SceneDelegate.swift in Sources */,
+				B47CBFA82DB4D8230078A3CB /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +313,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W624CV8B9S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = example/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fribe Navigation";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "for live navigation";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -309,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasleem.fribenavigation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -325,8 +343,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W624CV8B9S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = example/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fribe Navigation";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "for live navigation";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -337,7 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tasleem.fribenavigation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -368,7 +388,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/talharasool/fribe-navigation-ios.git";
+			requirement = {
+				branch = feature/add_api_integration;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */;
+			productName = MapboxNavigation;
+		};
 		CD958B672BF63B3500501F93 /* MapboxNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MapboxNavigation;
