@@ -10,6 +10,7 @@
 		B47CBFA82DB4D8230078A3CB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47CBFA72DB4D8230078A3CB /* Helper.swift */; };
 		B47CBFAB2DB4D9620078A3CB /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47CBFAA2DB4D9620078A3CB /* PlistReader.swift */; };
 		B47CBFAD2DB4D98A0078A3CB /* PlistKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47CBFAC2DB4D98A0078A3CB /* PlistKeys.swift */; };
+		B47CBFEC2DB4DD5D0078A3CB /* MapboxNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */; };
 		CD958B4B2BF6156100501F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4A2BF6156100501F93 /* AppDelegate.swift */; };
 		CD958B4D2BF6156100501F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4C2BF6156100501F93 /* SceneDelegate.swift */; };
 		CD958B542BF6156200501F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD958B532BF6156200501F93 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD958B682BF63B3500501F93 /* MapboxNavigation in Frameworks */,
+				B47CBFEC2DB4DD5D0078A3CB /* MapboxNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +121,7 @@
 			name = Example;
 			packageProductDependencies = (
 				CD958B672BF63B3500501F93 /* MapboxNavigation */,
+				B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */,
 			);
 			productName = "navigation sample";
 			productReference = CD958B472BF6156100501F93 /* Example.app */;
@@ -149,6 +152,7 @@
 			);
 			mainGroup = CD958B3E2BF6156100501F93;
 			packageReferences = (
+				B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */,
 			);
 			productRefGroup = CD958B482BF6156100501F93 /* Products */;
 			projectDirPath = "";
@@ -400,7 +404,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/talharasool/fribe-navigation-ios.git";
+			requirement = {
+				branch = feature/add_api_integration;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */;
+			productName = MapboxNavigation;
+		};
 		CD958B672BF63B3500501F93 /* MapboxNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MapboxNavigation;
