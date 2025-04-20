@@ -4,6 +4,8 @@
 <dict>
 	<key>MGLMapboxAccessToken</key>
 	<string>${MAPBOX_TOKEN}</string>
+    <key>PUBLISHED_API_KEY</key>
+    <string>$(PUBLISHED_API_KEY)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
