@@ -8,14 +8,21 @@
 import Foundation
 
 
+//public final class PlistReader {
+//    
+//    public static func value<T>(forKey key: String) -> T? {
+//        guard let dict = Bundle.main.infoDictionary,
+//              let value = dict[key] as? T else {
+//            print("❌ Missing or invalid value for key: \(key)")
+//            return nil
+//        }
+//        return value
+//    }
+//} 
+
+
 public final class PlistReader {
-    
     public static func value<T>(forKey key: String) -> T? {
-        guard let dict = Bundle.main.infoDictionary,
-              let value = dict[key] as? T else {
-            print("❌ Missing or invalid value for key: \(key)")
-            return nil
-        }
-        return value
+        Bundle.main.infoDictionary?[key] as? T
     }
-} 
+}
