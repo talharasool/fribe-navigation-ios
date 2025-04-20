@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class PlistReader {
+final public class PlistReader {
     
     /// Reads a value from Info.plist using the specified key and type.
     /// - Parameters:
