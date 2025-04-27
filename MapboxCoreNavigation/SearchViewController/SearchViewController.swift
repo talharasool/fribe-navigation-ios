@@ -7,23 +7,20 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+public class SearchViewController: UIViewController {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // Public property to set background color
+    public var backgroundColor: UIColor? {
+        didSet {
+            view.backgroundColor = backgroundColor
+        }
     }
-    */
 
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = backgroundColor ?? .white // Default color if not set
+    }
 }
+

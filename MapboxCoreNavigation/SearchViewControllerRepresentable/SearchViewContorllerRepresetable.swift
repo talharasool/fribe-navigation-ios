@@ -5,17 +5,23 @@
 //  Created by Talha Rasool on 20/04/2025.
 //
 
-import Foundation
-
 import SwiftUI
 
-@available(iOS 13.0, *)
-struct SearchViewControllerRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> SearchViewController {
-        return SearchViewController()
+public struct SearchViewControllerRepresentable: UIViewControllerRepresentable {
+    public var backgroundColor: UIColor?
+
+    public init(backgroundColor: UIColor? = nil) {
+        self.backgroundColor = backgroundColor
     }
 
-    func updateUIViewController(_ uiViewController: SearchViewController, context: Context) {
-        // No update logic for now
+    public func makeUIViewController(context: Context) -> SearchViewController {
+        let vc = SearchViewController()
+        vc.backgroundColor = backgroundColor
+        return vc
+    }
+
+    public func updateUIViewController(_ uiViewController: SearchViewController, context: Context) {
+        // Update background color dynamically if needed
+        uiViewController.backgroundColor = backgroundColor
     }
 }
