@@ -7,11 +7,19 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [.iOS(.v12)],
     products: [
+        // Branded bundle that re-exports MapboxCoreNavigation & MapboxNavigation
+        .library(
+            name: "Fribe",
+            targets: ["Fribe"]
+        ),
+        // Existing modules for backward compatibility
+        .library(
+            name: "MapboxCoreNavigation",
+            targets: ["MapboxCoreNavigation"]
+        ),
         .library(
             name: "MapboxNavigation",
-            targets: [
-                "MapboxNavigation"
-            ]
+            targets: ["MapboxNavigation"]
         )
     ],
     dependencies: [
@@ -22,6 +30,15 @@ let package = Package(
         .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6")
     ],
     targets: [
+        // Wrapper target for your branded module
+        .target(
+            name: "Fribe",
+            dependencies: [
+                "MapboxCoreNavigation",
+                "MapboxNavigation"
+            ],
+            path: "Sources/Fribe"
+        ),
         .target(
             name: "MapboxCoreNavigation",
             dependencies: [
@@ -64,24 +81,6 @@ let package = Package(
             ],
             path: "MapboxNavigationTests",
             resources: [
-                // NOTE: Ideally we would just put all resources like route.json and Assets.xcassets in Folder 'Resources'
-                // but an Xcode/SPM bug is preventing us from doing so. It is not possible to copy and process files into the same
-                // destination directiory ('*.bundle/Resources') without a code signing error:
-                // This is the error message:
-                //	CodeSign ~/Library/Developer/Xcode/DerivedData/maplibre-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/maplibre-navigation-ios_MapboxNavigationTests.bundle  (in target 'maplibre-navigation-ios_MapboxNavigationTests' from project 'maplibre-navigation-ios')
-                //	cd ~/Developer/maplibre-navigation-ios
-                //
-                //	Signing Identity:     "-"
-                //
-                //	/usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der ~/Library/Developer/Xcode/DerivedData/maplibre-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/maplibre-navigation-ios_MapboxNavigationTests.bundle
-                //
-                //	~/Library/Developer/Xcode/DerivedData/maplibre-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/maplibre-navigation-ios_MapboxNavigationTests.bundle: bundle format unrecognized, invalid, or unsuitable
-                //	Command CodeSign failed with a nonzero exit code
-                //
-                // Instead the json files are placed in a Folder called 'Fixtures' and manually specified for copying
-                // The Assets.xcassets is compiled into an Assets.car
-                // This results in a flat Bundle file structure however the tests pass.
-				
                 .process("Assets.xcassets"),
                 .copy("Fixtures/EmptyStyle.json"),
                 .copy("Fixtures/route.json"),
