@@ -27,18 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 		
         self.window = UIWindow(windowScene: windowScene)
-        
-//
-//        if let apiKey: String = PlistReader.value(forKey: PlistKey.PUBLISHED_API_KEY.rawValue){
-//            print("The published API key is here \(apiKey)")
-//        }
-//        
-
-
-        
-        // NOTE: You will need your own tile server, MapLibre doesn't provide the server infrastructure
-        // so this uses a demo style that only shows country borders
-        // this is not useful to evaluate the navigation, please change accordingly
         self.viewController = NavigationViewController(dayStyle: DayStyle(demoStyle: ()), nightStyle: NightStyle(demoStyle: ()))
         self.viewController.mapView.tracksUserCourse = false
         self.viewController.mapView.showsUserLocation = true
