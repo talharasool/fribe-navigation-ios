@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import MapboxCoreNavigation
+import Fribe
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Override point for customization after application launch.
-        true
+        // Configure Fribe with your access token
+        Fribe.configureMaps(accessToken: "your-access-token")
+        return true
     }
 
     // MARK: UISceneSession Lifecycle

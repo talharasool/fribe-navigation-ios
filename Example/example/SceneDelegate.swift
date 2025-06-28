@@ -10,6 +10,8 @@ import MapboxDirections
 import MapboxNavigation
 import MapLibre
 import UIKit
+import Fribe
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?

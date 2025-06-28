@@ -7,10 +7,11 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [.iOS(.v12)],
     products: [
-        // Branded bundle that re-exports MapboxCoreNavigation & MapboxNavigation
+        // Main library product
         .library(
             name: "Fribe",
-            targets: ["Fribe"]
+            type: .dynamic,
+            targets: ["Fribe", "MapboxCoreNavigation", "MapboxNavigation"]
         ),
         // Existing modules for backward compatibility
         .library(
@@ -30,14 +31,16 @@ let package = Package(
         .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6")
     ],
     targets: [
-        // Wrapper target for your branded module
         .target(
             name: "Fribe",
             dependencies: [
                 "MapboxCoreNavigation",
-                "MapboxNavigation"
+                "MapboxNavigation",
+                .product(name: "MapboxDirections", package: "mapbox-directions-swift"),
+                .product(name: "Turf", package: "turf-swift")
             ],
-            path: "Sources/Fribe"
+            path: "Sources/Fribe",
+            publicHeadersPath: "include"
         ),
         .target(
             name: "MapboxCoreNavigation",
@@ -47,7 +50,9 @@ let package = Package(
                 "MapboxCoreNavigationObjC"
             ],
             path: "MapboxCoreNavigation",
-            resources: [.process("resources")]
+            resources: [
+                .process("Resources")
+            ]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
@@ -62,7 +67,10 @@ let package = Package(
             ],
             path: "MapboxNavigation",
             resources: [
-                .copy("Resources/Assets.xcassets")
+                .process("Resources")
+            ],
+            swiftSettings: [
+                .define("SPM_BUILDING")
             ]
         ),
         .target(
@@ -82,12 +90,7 @@ let package = Package(
             path: "MapboxNavigationTests",
             resources: [
                 .process("Assets.xcassets"),
-                .copy("Fixtures/EmptyStyle.json"),
-                .copy("Fixtures/route.json"),
-                .copy("Fixtures/route-for-lane-testing.json"),
-                .copy("Fixtures/route-with-banner-instructions.json"),
-                .copy("Fixtures/route-with-instructions.json"),
-                .copy("Fixtures/route-with-lanes.json")
+                .process("Fixtures")
             ]
         ),
         .testTarget(
@@ -97,8 +100,8 @@ let package = Package(
                 "MapboxCoreNavigation"
             ],
             path: "MapboxCoreNavigationTests",
-            resources: [
-                .copy("Resources")
+            exclude: [
+                "Resources/Info.plist"  // Exclude Info.plist from resources
             ]
         )
     ]

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B47CBFA82DB4D8230078A3CB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47CBFA72DB4D8230078A3CB /* Helper.swift */; };
 		B47CBFEC2DB4DD5D0078A3CB /* MapboxNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */; };
+		B4D214E12E0FCD0800E60D38 /* Fribe in Frameworks */ = {isa = PBXBuildFile; productRef = B4D214E02E0FCD0800E60D38 /* Fribe */; };
+		B4D214E32E0FCD0800E60D38 /* MapboxCoreNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = B4D214E22E0FCD0800E60D38 /* MapboxCoreNavigation */; };
 		CD958B4B2BF6156100501F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4A2BF6156100501F93 /* AppDelegate.swift */; };
 		CD958B4D2BF6156100501F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4C2BF6156100501F93 /* SceneDelegate.swift */; };
 		CD958B542BF6156200501F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD958B532BF6156200501F93 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D214E32E0FCD0800E60D38 /* MapboxCoreNavigation in Frameworks */,
+				B4D214E12E0FCD0800E60D38 /* Fribe in Frameworks */,
 				CD958B682BF63B3500501F93 /* MapboxNavigation in Frameworks */,
 				B47CBFEC2DB4DD5D0078A3CB /* MapboxNavigation in Frameworks */,
 			);
@@ -108,6 +112,8 @@
 			packageProductDependencies = (
 				CD958B672BF63B3500501F93 /* MapboxNavigation */,
 				B47CBFEB2DB4DD5D0078A3CB /* MapboxNavigation */,
+				B4D214E02E0FCD0800E60D38 /* Fribe */,
+				B4D214E22E0FCD0800E60D38 /* MapboxCoreNavigation */,
 			);
 			productName = "navigation sample";
 			productReference = CD958B472BF6156100501F93 /* Example.app */;
@@ -404,6 +410,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */;
 			productName = MapboxNavigation;
+		};
+		B4D214E02E0FCD0800E60D38 /* Fribe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */;
+			productName = Fribe;
+		};
+		B4D214E22E0FCD0800E60D38 /* MapboxCoreNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B47CBFEA2DB4DD5D0078A3CB /* XCRemoteSwiftPackageReference "fribe-navigation-ios" */;
+			productName = MapboxCoreNavigation;
 		};
 		CD958B672BF63B3500501F93 /* MapboxNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
